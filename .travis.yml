@@ -1,6 +1,7 @@
 language: python
 python:
 - '3.6.6'
+
 services:
 - postgresql
 - docker
@@ -16,7 +17,9 @@ before_install:
   - cd ..
 script:
   - cd docker
+
   - docker exec -ti decide_web ./manage.py test
+
   - cd ..
 addons:
   postgresql: '9.6'
