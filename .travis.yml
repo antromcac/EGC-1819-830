@@ -16,7 +16,7 @@ before_install:
   - cd ..
 script:
   - cd docker
-  - docker exec -ti decide_web ./manage.py test authentication.tests
+  - docker exec -ti decide_web ./manage.py test
   - cd ..
 addons:
   postgresql: '9.6'
