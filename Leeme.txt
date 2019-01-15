@@ -1,0 +1,1 @@
+Hize un pull merge por inercia en master de la incidencia del A, y he creado una rama apartadoB para poder hacer el B
