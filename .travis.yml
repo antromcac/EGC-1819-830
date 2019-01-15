@@ -1,0 +1,23 @@
+language: python
+python:
+- '3.6.6'
+- '2.7'
+services:
+- postgresql
+- docker
+env:
+- DJANGO=2.0 DB=postgres
+global:
+- PGPORT=5432
+install:
+- pip install -r requirements.txt
+before_install:
+  - cd docker
+  - docker-compose up -d
+  - cd ..
+script:
+  - cd docker
+  - docker exec -ti decide_web ./manage.py test store.tests
+  - cd ..
+addons:
+  postgresql: '9.6'
